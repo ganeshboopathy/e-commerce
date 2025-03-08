@@ -1,0 +1,65 @@
+.nav-bar-container{
+    width: 100%;
+    display: flex;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+.nav-bar-logo{
+    display: flex;
+    gap: 1px;
+    align-items: center;
+}
+.nav-bar-logo img{
+    width: 150px;
+    height: 100px;
+}
+.nav-bar-container ul{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+}
+.nav-bar-container li{
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.nav-bar-button{
+    display: flex;
+    align-items: center;
+}
+.nav-bar-button button{
+    background-color: white;
+    padding: 1rem;
+    width: 150px;
+    outline: none;
+    border: none;
+    border: 1px solid gray;
+    font-size: 1rem;
+    font-weight:600;
+    border-radius: 30px;
+}
+.icon{
+    font-size: 3.5rem;
+    color: gray;
+}
+.card-display{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: blue;
+    font-size: .7rem;
+    top: -5px;
+    right: 0px;
+}
+.nav-bar-button button:active{
+ background-color: gray;
+ color: white;
+}
