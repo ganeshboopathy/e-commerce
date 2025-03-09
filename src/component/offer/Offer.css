@@ -10,9 +10,14 @@
     width: 100%;
     height: 500px;
     background: linear-gradient(to bottom right, #ffb6c1 15%, #ffffff);
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8); /* Adding box shadow */
+
+
 }
 .offer-banner-text{
-    margin-top: 15%;
+    margin-top: 5%;
     padding-left: 10%;
 }
 .offer-banner-text button{
@@ -31,7 +36,7 @@
     margin-top: 1rem;
 }
 .offer-banner-img{
-    background-image: url(../../assets/woman-pointing-side-standing-full-length-isolated-white-wall.jpg);
+    background-image: url(../../assets/vecteezy_young-woman-announcing-with-megaphone-red-apron_52854962.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

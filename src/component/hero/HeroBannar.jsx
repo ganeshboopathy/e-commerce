@@ -7,7 +7,7 @@ export const HeroBannar = () => {
     <div>
         <div className="hero-banner">
             <div className='hero-banner-text'>
-                <h2>NEW ARRIVALS ONLY</h2>
+                <h2 style={{color:''}}>NEW ARRIVALS ONLY</h2>
                 <h1 style={{fontSize:"5rem"}}>new<br/>Collections<br/>For everyone</h1>
                 <button>Latest Collection <FaArrowRight />
                 </button>
