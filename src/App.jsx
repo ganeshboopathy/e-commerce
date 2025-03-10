@@ -10,24 +10,39 @@ import { BrowserRouter, Routes,Route } from 'react-router-dom'
 import Mens from './component/mens-route/Mens'
 import Women from './component/women-route/Women'
 import Kids from './component/kids-route/Kids'
+import View from './component/product_view/View'
+import Singup from './component/singup page/Singup'
 function App() {
   const [count, setCount] = useState(0)
+  const [login,setlogin]= useState(true)
 
-  return (
-    <>
-    <BrowserRouter>
-    <Navbar/> 
-    <HeroBannar/> 
-    <Routes>
-      <Route path="/" element={<Popular/>}/>
-      <Route path="/mens" element={<Mens/>}/>
-      <Route path="/women" element={<Women/>}/>
-      <Route path='/kids' element ={<Kids/>}/>
-    </Routes>
-    <Footer/>
-    </BrowserRouter>
-    </>
-  )
+  if(login){
+    
+    return (
+      <>
+      <BrowserRouter>
+      <Navbar setlogin={setlogin} /> 
+      <HeroBannar/> 
+      <Routes>
+        <Route path="/" element={<Popular/>}/>
+        <Route path="/mens" element={<Mens/>}/>
+        <Route path="/women" element={<Women/>}/>
+        <Route path='/kids' element ={<Kids/>}/>
+        <Route path='/view:id' element={<View/>}/>
+      </Routes>
+      <Footer/>
+      </BrowserRouter>
+      </>
+    )
+  }
+  else{
+    return (
+      <div className='login-body'>
+        <Singup setlogin={setlogin} />
+      </div>
+    )
+  }
+ 
 }
 
 export default App

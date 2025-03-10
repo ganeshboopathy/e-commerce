@@ -2,13 +2,15 @@ import React from 'react'
 import './Iteam.css'
 import { popular_dress } from '../../data/popular_girl'
 import { TbShoppingCartPlus } from "react-icons/tb";
+import { useNavigate } from 'react-router-dom';
 
 export const Iteam = ({id,image,description,new_price,old_price}) => {
+  const navigate = useNavigate()
   return (
     <div>
-      <div className='card'>
+      <div className='card' onClick={()=>{navigate('/view:id')}}>
             <div key={id} className='card-container'>
-              <img src={image} alt={description} className='image' />
+              <img src={image} alt={description} className='image-container' />
               <h4 className='description'>{description}</h4>
               <div className='price-container'>
                 <div className='box'>

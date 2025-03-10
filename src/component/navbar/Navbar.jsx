@@ -3,7 +3,7 @@ import logo from '../../../src/assets/logo1.jpg'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({setlogin}) => {
     let count = 1
     const navigate = useNavigate();
     return (
@@ -54,7 +54,7 @@ const Navbar = () => {
                     }
                 </ul>
                 <div className='nav-bar-button'>
-                    <button>Login</button>
+                    <button  onClick={()=>setlogin(false)}>Login</button>
                     <div style={{ position: 'relative' }}>
                         <MdOutlineShoppingCart className='icon' />
                         <div className='card-display'>{count}</div>
