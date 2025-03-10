@@ -63,7 +63,7 @@ label{
     color: gray;
     margin-bottom: 3px;
 }
-input{
+.sing-up-container input{
     outline: none;
     height: 2.5rem;
     margin-bottom: 2rem;

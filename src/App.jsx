@@ -28,7 +28,7 @@ function App() {
         <Route path="/mens" element={<Mens/>}/>
         <Route path="/women" element={<Women/>}/>
         <Route path='/kids' element ={<Kids/>}/>
-        <Route path='/view:id' element={<View/>}/>
+        <Route path='/view/:id' element={<View/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>
