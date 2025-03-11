@@ -8,10 +8,10 @@ import { CiStar } from "react-icons/ci";
 import Iteam from '../iteams/Iteam';
 import Offer from '../offer/Offer';
 import { BlinkBlur } from 'react-loading-indicators';
+import {data_e_commerce} from '../../data/data'
 const View = () => {
-    const { id } = useParams();
+    const { id,category } = useParams();
     const [loading, setLoading] = useState(true);
-    const category = ['dress', 'women', 'popular'];
 
     useEffect(() => {
         setTimeout(() => {
@@ -47,14 +47,14 @@ const View = () => {
 
     return (
         <div style={{ margin: '3rem' }}>
-            {popular_dress.map((iteam) => {
-                if (parseInt(id) === iteam.id) {
+            {data_e_commerce.map((iteam) => {
+                if (Number(id) === iteam.id) {
                     return (
                         <div key={iteam.id} className='view-container'>
                             <div>
                                 <div className='category'>
                                     <div className='category-name'>
-                                        {category.map((item, index) => (
+                                        {iteam.category_in_view.map((item, index) => (
                                             <h2 key={index}>{item}/</h2>
                                         ))}
                                     </div>
@@ -120,18 +120,19 @@ const View = () => {
                 <h1 style={{ textAlign: 'center', marginTop: '30px', marginBottom: '10px' }}>RELATED PRODUCTS</h1>
                 <hr style={{ textAlign: 'center', width: '300px', height: '7px', backgroundColor: 'black', marginBottom: '20px' }} />
                 <div className='card-popular'>
-                    {popular_dress.map((iteam) => (
-                        Number(id) !== iteam.id && (
-                            <Iteam
+                    {data_e_commerce.map((iteam,index) => {
+                        if(Number(id)!==iteam.id && category== iteam.category )
+                           return <Iteam
                                 key={iteam.id}
                                 id={iteam.id}
                                 image={iteam.image}
                                 description={iteam.description}
                                 new_price={iteam.new_price}
                                 old_price={iteam.old_price}
+                                category={iteam.category}
                             />
-                        )
-                    ))}
+                    }
+                    )}
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import '../popular_dress/Popular.css'
 import {kids_data} from '../../data/kids'
 import Iteam from '../iteams/Iteam'
+import {data_e_commerce} from '../../data/data'
 const Kids = () => {
   return (
 <div>
@@ -10,7 +11,8 @@ const Kids = () => {
         <hr style={{textAlign:'center', width:'200px',height:'7px', backgroundColor:'black',marginBottom:'20px'}}></hr>
         {/* <Iteam/> */}
         <div className='card-popular'>
-        {kids_data.map((iteam,index)=>{
+        {data_e_commerce.map((iteam,index)=>{
+          if(iteam.category=='kids')
           return(
             <Iteam
             key={iteam.id} // Always provide a key when mapping
@@ -19,9 +21,12 @@ const Kids = () => {
             description={iteam.description}
             new_price={iteam.new_price}
             old_price={iteam.old_price}
+            category={iteam.category
+            }
           /> )
         })}
-        {kids_data.map((iteam,index)=>{
+        {data_e_commerce.map((iteam,index)=>{
+          if(iteam.category=='kids')
           return(
             <Iteam
             key={iteam.id} // Always provide a key when mapping
@@ -30,6 +35,7 @@ const Kids = () => {
             description={iteam.description}
             new_price={iteam.new_price}
             old_price={iteam.old_price}
+            category={iteam.category}
           /> )
         })}
         </div>

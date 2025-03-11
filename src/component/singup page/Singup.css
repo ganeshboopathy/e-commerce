@@ -69,6 +69,7 @@ label{
     height: 2.5rem;
     margin-bottom: 2rem;
     border-radius: 5px;
+    padding: 15px;
     border: none;
     border: .3px solid rgb(151, 141, 141);
 }
@@ -112,4 +113,7 @@ label{
     top:-7px;
     right: -7px;
     border-radius: 100%;
+}
+.button-login:active{
+    background-color: rgb(34, 168, 212);
 }

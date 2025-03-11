@@ -20,7 +20,9 @@ export let popular_dress = [
             "Material is soft and great for summer.",
             "Received so many compliments wearing this!",
             "Would definitely buy again in another color."
-        ]
+        ],
+        category_in_view: ['dress', 'women', 'popular'],
+        category: 'popular_dress'
     },
     {
         id: 2,
@@ -35,7 +37,9 @@ export let popular_dress = [
             "The detailing is absolutely beautiful.",
             "Fits like a dream and is very flattering.",
             "One of the best dresses I’ve ever owned!"
-        ]
+        ],
+        category_in_view: ['dress', 'women', 'popular'],
+        category: 'popular_dress'
     },
     {
         id: 3,
@@ -50,7 +54,9 @@ export let popular_dress = [
             "Runs a little big, but still looks great!",
             "Perfect for casual outings and brunch.",
             "Love the button-down design, very cute!"
-        ]
+        ],
+        category_in_view: ['dress', 'women', 'popular'],
+        category: 'popular_dress'
     },
     {
         id: 4,
@@ -65,7 +71,9 @@ export let popular_dress = [
             "A-line cut gives a beautiful silhouette.",
             "Material is soft and breathable.",
             "Great choice for both work and outings."
-        ]
+        ],
+        category_in_view: ['dress', 'women', 'popular'],
+        category: 'popular_dress'
     },
     {
         id: 5,
@@ -80,7 +88,9 @@ export let popular_dress = [
             "Great for a night out, very stylish.",
             "The fit is super flattering.",
             "Looks exactly like the pictures!"
-        ]
+        ],
+        category_in_view: ['dress', 'women', 'popular'],
+        category: 'popular_dress'
     },
     {
         id: 6,
@@ -95,7 +105,9 @@ export let popular_dress = [
             "Perfect for beach vacations.",
             "Goes well with sandals and hats.",
             "A must-have for summer fashion."
-        ]
+        ],
+        category_in_view: ['dress', 'women', 'popular'],
+        category: 'popular_dress'
     },
     {
         id: 7,
@@ -110,7 +122,9 @@ export let popular_dress = [
             "Can be dressed up or down easily.",
             "Fabric has a nice flow and stretch.",
             "One of my favorite dresses now!"
-        ]
+        ],
+        category_in_view: ['dress', 'women', 'popular'],
+        category: 'popular_dress'
     },
     {
         id: 8,
@@ -125,6 +139,8 @@ export let popular_dress = [
             "Perfect for formal events or date nights.",
             "Hugs the body beautifully.",
             "Worth every penny!"
-        ]
+        ],
+        category_in_view: ['dress', 'women', 'popular'],
+        category: 'popular_dress'
     }
 ];

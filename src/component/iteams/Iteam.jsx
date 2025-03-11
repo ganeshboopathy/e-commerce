@@ -5,7 +5,8 @@ import { TbShoppingCartPlus } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Riple } from 'react-loading-indicators';
-export const Iteam = ({ id, image, description, new_price, old_price }) => {
+
+export const Iteam = ({ id, image, description, new_price, old_price,category}) => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -24,7 +25,7 @@ export const Iteam = ({ id, image, description, new_price, old_price }) => {
 
   return (
     <div>
-      <div className='card' onClick={() => { navigate(`/view/${id}`) }}>
+      <div className='card' onClick={() => { navigate(`/view/${id}/${category}`) }}>
         <div key={id} className='card-container'>
           <img src={image} alt={description} className='image-container' />
           <h4 className='description'>{description}</h4>
