@@ -10,7 +10,7 @@ const Navbar = ({setlogin}) => {
         <>
             <div className='nav-bar-container'>
                 <div className='nav-bar-logo'>
-                    <img src={logo} />
+                    <img src={logo} onDoubleClick={()=>navigate('/')} />
                     <h1>SHOPPER</h1>
                 </div>
                 <ul>

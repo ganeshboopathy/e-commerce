@@ -1,6 +1,7 @@
 import './Singup.css'
 
 function Singup({setlogin}) {
+    
     return (
         <div className="signup">
             <div className="singup-container">
@@ -35,6 +36,7 @@ function Singup({setlogin}) {
                     </center>
                 </div>
             </div>
+            <button className='sing-up-close'  onClick={()=>setlogin(true)}>X</button>
         </div>
     )
 }

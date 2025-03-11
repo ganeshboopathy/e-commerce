@@ -3,9 +3,25 @@ import './Iteam.css'
 import { popular_dress } from '../../data/popular_girl'
 import { TbShoppingCartPlus } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
-
+import { useState, useEffect } from 'react';
+import { Riple } from 'react-loading-indicators';
 export const Iteam = ({ id, image, description, new_price, old_price }) => {
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="loading-container" style={{ display: 'flex', justifyContent:'space-around', alignItems: 'center', height: '100vh',gap:'50px' }}>
+           <Riple color="blue" size="large" text="" textColor="" />
+</div>
+    );
+  }
+
   return (
     <div>
       <div className='card' onClick={() => { navigate(`/view/${id}`) }}>

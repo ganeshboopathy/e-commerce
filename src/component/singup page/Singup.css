@@ -3,6 +3,7 @@
     height: auto;
     border-radius: 20px;
     background-color: white;
+    position: relative;
 }
 .singup-container{
     display: grid;
@@ -99,5 +100,16 @@ label{
     width: 5px;
     height: 5px;
     background-color: white;
+    border-radius: 100%;
+}
+.sing-up-close{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    color:white;
+    position:absolute;
+    border: none;
+    top:-7px;
+    right: -7px;
     border-radius: 100%;
 }
