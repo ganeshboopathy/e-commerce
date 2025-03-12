@@ -3,6 +3,7 @@ import './Order_form.css';
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { data_e_commerce } from '../../data/data';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const Order_form = () => {
     const [quantity, setQuantity] = useState(1);
@@ -10,6 +11,14 @@ const Order_form = () => {
     const [phone, setPhone] = useState("");
     const { id } = useParams();
     const product = data_e_commerce.find((item) => item.id === Number(id));
+     
+    const my_alert =()=>{
+        Swal.fire({
+            title: "Thank You! Your Order is Confirmed",
+            icon: "success",
+            draggable: true
+          });
+    }
 
     // Ensure product exists before accessing its properties
     if (!product) {
@@ -68,7 +77,7 @@ const Order_form = () => {
                 />
 
                 {/* Confirm Order Button */}
-                <button className='btn-confirm'>Confirm The Order</button>
+                <button className='btn-confirm' onClick={my_alert}>Confirm The Order</button>
             </div>
         </div>
     );

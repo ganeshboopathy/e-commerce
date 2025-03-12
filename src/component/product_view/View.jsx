@@ -105,7 +105,10 @@ const View = () => {
                                         <li key={index} style={{ padding: '1rem', fontSize: '1.5rem' }}>{rev}</li>
                                     ))}
                                 </ul>
+                                <button className='btn' style={{ padding: '20px', fontSize: '1.5rem',margin:'20px' }} onClick={()=>{navigate(`/order/${id}`)}}>Place the Order</button>
+
                             </div>
+                            
                         </div>
                     );
                 }
