@@ -13,6 +13,7 @@ import Kids from './component/kids-route/Kids'
 import View from './component/product_view/View'
 import Singup from './component/singup page/Singup'
 import { BlinkBlur } from 'react-loading-indicators';
+import Order from './component/pleace-order/Order'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -47,6 +48,7 @@ function App() {
             <Route path="/women" element={<Women />} />
             <Route path='/kids' element={<Kids />} />
             <Route path='/view/:id/:category' element={<View />} />
+            <Route path='/order/:id' element={<Order/>} /> 
           </Routes>
           <Footer />
         </BrowserRouter>

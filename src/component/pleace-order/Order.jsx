@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './View.css';
+import React from 'react'
+import '../product_view/View.css'
 import { useParams } from 'react-router-dom';
 import { popular_dress } from '../../data/popular_girl';
 import { TbShoppingCartPlus } from "react-icons/tb";
@@ -9,10 +9,13 @@ import Iteam from '../iteams/Iteam';
 import Offer from '../offer/Offer';
 import { BlinkBlur } from 'react-loading-indicators';
 import {data_e_commerce} from '../../data/data'
-import Order from '../pleace-order/Order';
+import { useEffect, useState } from 'react';
+import Order_form from './Order_form';
 import { useNavigate } from 'react-router-dom';
-const View = () => {
-    const { id,category } = useParams();
+
+const Order = () => {
+  
+    const { id} = useParams();
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate()
 
@@ -49,7 +52,8 @@ const View = () => {
     }
 
     return (
-        <div style={{ margin: '3rem' }}>
+        <div className="order-page-container">
+               <div style={{ margin: '3rem' }}>
             {data_e_commerce.map((iteam) => {
                 if (Number(id) === iteam.id) {
                     return (
@@ -99,12 +103,7 @@ const View = () => {
                                     <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
                                 </div>
 
-                                <h2 style={{ color: 'blue' }}>Specification :</h2>
-                                <ul style={{ margin: "2rem" }}>
-                                    {iteam.review.map((rev, index) => (
-                                        <li key={index} style={{ padding: '1rem', fontSize: '1.5rem' }}>{rev}</li>
-                                    ))}
-                                </ul>
+                                <Order_form/>
                             </div>
                         </div>
                     );
@@ -114,32 +113,13 @@ const View = () => {
             
             <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '1rem', justifyContent: 'center', width: '100%' }}>
                 <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
-                <button className='btn' style={{ padding: '20px', fontSize: '1.5rem' }} onClick={()=>{navigate(`/order/${id}`)}}>Place the Order</button>
+                <button className='btn' style={{ padding: '20px', fontSize: '1.5rem' }} onClick={()=>navigate('/')}>Back to home</button>
                 <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
-            </div>
-
-            <div className="popular-container">
-                <Offer />
-                <h1 style={{ textAlign: 'center', marginTop: '30px', marginBottom: '10px' }}>RELATED PRODUCTS</h1>
-                <hr style={{ textAlign: 'center', width: '300px', height: '7px', backgroundColor: 'black', marginBottom: '20px' }} />
-                <div className='card-popular'>
-                    {data_e_commerce.map((iteam,index) => {
-                        if(Number(id)!==iteam.id && category== iteam.category )
-                           return <Iteam
-                                key={iteam.id}
-                                id={iteam.id}
-                                image={iteam.image}
-                                description={iteam.description}
-                                new_price={iteam.new_price}
-                                old_price={iteam.old_price}
-                                category={iteam.category}
-                            />
-                    }
-                    )}
-                </div>
-            </div>
+            </div>          
         </div>
-    );
+        </div>
+       
+    );  
 }
 
-export default View;
+export default Order
