@@ -14,6 +14,7 @@ import View from './component/product_view/View'
 import Singup from './component/singup page/Singup'
 import { BlinkBlur } from 'react-loading-indicators';
 import Order from './component/pleace-order/Order'
+import Add_to_card from './component/Add-to-card/Add_to_card'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -49,6 +50,7 @@ function App() {
             <Route path='/kids' element={<Kids />} />
             <Route path='/view/:id/:category' element={<View />} />
             <Route path='/order/:id' element={<Order/>} /> 
+            <Route path="/Add-to-card" element={<Add_to_card/>} />
           </Routes>
           <Footer />
         </BrowserRouter>

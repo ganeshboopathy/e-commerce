@@ -1,14 +1,18 @@
 import React from 'react'
 import './Iteam.css'
-import { popular_dress } from '../../data/popular_girl'
 import { TbShoppingCartPlus } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Riple } from 'react-loading-indicators';
+import { useDispatch } from 'react-redux';
+import { addCard } from '../../store/CardSlice';
+import {removeCard} from '../../store/CardSlice'
+
 
 export const Iteam = ({ id, image, description, new_price, old_price,category}) => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
+  const dispatch= useDispatch()
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -22,19 +26,23 @@ export const Iteam = ({ id, image, description, new_price, old_price,category}) 
 </div>
     );
   }
-
+  const addtoCard = (id)=>{
+    dispatch(addCard(id))
+    
+  }
+ 
   return (
     <div>
-      <div className='card' onClick={() => { navigate(`/view/${id}/${category}`) }}>
+      <div className='card' >
         <div key={id} className='card-container'>
-          <img src={image} alt={description} className='image-container' />
+          <img src={image} alt={description} className='image-container' onClick={() => { navigate(`/view/${id}/${category}`) }} />
           <h4 className='description'>{description}</h4>
           <div className='price-container'>
-            <div className='box'>
+            <div className='box' >
               <p style={{ fontWeight: '800' }}> ${new_price}</p>
               <p style={{ color: 'gray', textDecoration: "line-through" }}> ${old_price}</p>
             </div>
-            <button className='btn'>Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} /> </button>
+            <button className='btn' onClick={()=>addtoCard(id)}>Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} /> </button>
           </div>
         </div>
 

@@ -2,11 +2,17 @@ import './navbar.css'
 import logo from '../../../src/assets/logo1.jpg'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import { useSelector} from 'react-redux';
+import { useEffect } from 'react';
 
 const Navbar = ({setlogin}) => {
-    let count = 1
     const navigate = useNavigate();
-    return (
+    const cartItems = useSelector((state) => state.card); 
+    const count = cartItems.length;
+    useEffect(() => {
+            console.log(cartItems.length);
+        }, [cartItems]);
+        return (
         <>
             <div className='nav-bar-container'>
                 <div className='nav-bar-logo'>
@@ -56,8 +62,21 @@ const Navbar = ({setlogin}) => {
                 <div className='nav-bar-button'>
                     <button  onClick={()=>setlogin(false)}>Login</button>
                     <div style={{ position: 'relative' }}>
-                        <MdOutlineShoppingCart className='icon' />
-                        <div className='card-display'>{count}</div>
+                    {
+                        window.location.pathname === '/Add-to-card' ? (
+                            <div>
+                                <MdOutlineShoppingCart className='icon'  style={{color:'red'}} onClick={()=>navigate('/Add-to-card')}/>
+                                <div className='card-display'>{count}</div>
+                                <hr className='nav-hr' />
+                            </div>
+                        ):(
+                            <div>
+                                <MdOutlineShoppingCart className='icon'  onClick={()=>navigate('/Add-to-card')}/>
+                               { count>0 && <div className='card-display' >{count}</div>}
+                            </div>
+                        )
+                    }
+                        
                     </div>
                 </div>
             </div>

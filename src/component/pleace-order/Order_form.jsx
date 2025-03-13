@@ -8,38 +8,48 @@ import Swal from 'sweetalert2'
 const Order_form = () => {
     const [quantity, setQuantity] = useState(1);
     const [address, setAddress] = useState("");
-    const [phone, setPhone] = useState("");
+    const [phone, setPhone] = useState();
     const { id } = useParams();
     const product = data_e_commerce.find((item) => item.id === Number(id));
-     
-    const my_alert =()=>{
+
+    const my_alert = () => {
+
+    }
+
+    const handleConfirmOrder = () => {
+        if (!address || !phone) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please fill all fields!",
+            });
+            return;
+        }
         Swal.fire({
             title: "Thank You! Your Order is Confirmed",
             icon: "success",
             draggable: true
-          });
-    }
+        });
+    };
 
-    // Ensure product exists before accessing its properties
-    if (!product) {
-        return <p>Product not found</p>;
-    }
+    if (!product) return <p>Product not found</p>;
+
 
     return (
         <div className="order-form-container">
             <div className='order-form'>
                 <h2>Purchase Details</h2>
-                
+
                 {/* Product Count */}
                 <label>Product Count:</label>
                 <div className='count-container'>
-                    <button 
-                        className='btn-order' 
+                    <button
+                        className='btn-order'
                         onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
                         style={{ backgroundColor: 'red' }}>
                         <FaMinus />
                     </button>
-                    
+
                     <input
                         className='input-order'
                         type='number'
@@ -58,9 +68,9 @@ const Order_form = () => {
 
                 {/* Address Input */}
                 <label>Address:</label>
-                <textarea 
-                    name="address" 
-                    rows="3" 
+                <textarea
+                    name="address"
+                    rows="3"
                     placeholder="Enter your address"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
@@ -68,16 +78,16 @@ const Order_form = () => {
 
                 {/* Phone Number Input */}
                 <label>Phone Number:</label>
-                <input 
-                    type="tel" 
+                <input
+                    type="tel"
                     className="input-phone"
                     placeholder="Enter your phone number"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e) => Number(setPhone(e.target.value))}
                 />
 
                 {/* Confirm Order Button */}
-                <button className='btn-confirm' onClick={my_alert}>Confirm The Order</button>
+                <button className='btn-confirm' onClick={handleConfirmOrder}>Confirm The Order</button>
             </div>
         </div>
     );

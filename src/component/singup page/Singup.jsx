@@ -1,6 +1,32 @@
 import './Singup.css'
+import { useState } from 'react';
+import Swal from 'sweetalert2'
 
 function Singup({setlogin}) {
+
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!fullName || !email || !password) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please fill all fields!",
+              });
+            return;
+        }else{
+       
+        Swal.fire({
+            title: "Signup successful!",
+            icon: "success",
+            draggable: true
+          });
+          setlogin(true);
+        }
+    };
     
     return (
         <div className="signup">
@@ -24,13 +50,13 @@ function Singup({setlogin}) {
                     <h1>Get Started</h1>
                     <h4 style={{ marginTop: '10px', color: 'gray', marginBottom: '30px' }}>Create your account now  </h4>
                     <label style={{ color: 'gray', marginBottom: '10px' }}>Full name</label>
-                    <input type='text' />
+                    <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
                     <label>Email</label>
-                    <input type='email' />
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <label>Password</label>
-                    <label className='green-label'>Storng !</label>
-                    <input type='password' />
-                    <button className='button-login' onClick={()=>setlogin(true)}>Sing Up</button>
+                    <label className='green-label'>Strong !</label>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <button className='button-login' onClick={handleSubmit}>Sing Up</button>
                     <center>
                         <p style={{color:'gray',marginTop:"30px"}}>Have a account ? <a href=''>Login</a></p>
                     </center>
