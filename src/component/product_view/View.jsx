@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './View.css';
 import { useParams } from 'react-router-dom';
-import { popular_dress } from '../../data/popular_girl';
 import { TbShoppingCartPlus } from "react-icons/tb";
 import { FaStar, FaStarHalfStroke } from "react-icons/fa6";
 import { CiStar } from "react-icons/ci";
@@ -9,18 +8,24 @@ import Iteam from '../iteams/Iteam';
 import Offer from '../offer/Offer';
 import { BlinkBlur } from 'react-loading-indicators';
 import {data_e_commerce} from '../../data/data'
-import Order from '../pleace-order/Order';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {addCard} from "../../store/CardSlice"
 const View = () => {
     const { id,category } = useParams();
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate()
+  const dispatch= useDispatch()
 
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
         }, 3000);
     }, []);
+    const addtoCard = (id)=>{
+        dispatch(addCard(id))
+        
+      }
 
     const renderStars = (rating) => {
         const fullStars = Math.floor(rating);
@@ -86,7 +91,7 @@ const View = () => {
                                 </div>
 
                                 <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '50px' }}>
-                                    <button className="btn">
+                                    <button className="btn" onClick={()=>addtoCard(iteam.id)}>
                                         Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} />
                                     </button>
                                     <h1 style={{ color: 'green' }}>Price : {iteam.new_price}</h1>

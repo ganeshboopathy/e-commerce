@@ -6,13 +6,12 @@ import { useState, useEffect } from 'react';
 import { Riple } from 'react-loading-indicators';
 import { useDispatch } from 'react-redux';
 import { addCard } from '../../store/CardSlice';
-import {removeCard} from '../../store/CardSlice'
 
 
-export const Iteam = ({ id, image, description, new_price, old_price,category}) => {
+export const Iteam = ({ id, image, description, new_price, old_price, category }) => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
-  const dispatch= useDispatch()
+  const dispatch = useDispatch()
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -21,19 +20,20 @@ export const Iteam = ({ id, image, description, new_price, old_price,category}) 
 
   if (loading) {
     return (
-      <div className="loading-container" style={{ display: 'flex', justifyContent:'space-around', alignItems: 'center', height: '100vh',gap:'50px' }}>
-           <Riple color="blue" size="large" text="" textColor="" />
-</div>
+      <div className="loading-container" style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', height: '100vh', gap: '50px' }}>
+        <Riple color="blue" size="large" text="" textColor="" />
+      </div>
     );
   }
-  const addtoCard = (id)=>{
+  const addtoCard = (id) => {
     dispatch(addCard(id))
-    
+
   }
- 
+
   return (
     <div>
-      <div className='card' >
+      <div className='card' data-aos="fade-up"
+        data-aos-anchor-placement="top-center" >
         <div key={id} className='card-container'>
           <img src={image} alt={description} className='image-container' onClick={() => { navigate(`/view/${id}/${category}`) }} />
           <h4 className='description'>{description}</h4>
@@ -42,7 +42,7 @@ export const Iteam = ({ id, image, description, new_price, old_price,category}) 
               <p style={{ fontWeight: '800' }}> ${new_price}</p>
               <p style={{ color: 'gray', textDecoration: "line-through" }}> ${old_price}</p>
             </div>
-            <button className='btn' onClick={()=>addtoCard(id)}>Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} /> </button>
+            <button className='btn' onClick={() => addtoCard(id)}>Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} /> </button>
           </div>
         </div>
 

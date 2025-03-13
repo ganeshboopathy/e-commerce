@@ -12,12 +12,21 @@ import {data_e_commerce} from '../../data/data'
 import { useEffect, useState } from 'react';
 import Order_form from './Order_form';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addCard } from '../../store/CardSlice';
 
 const Order = () => {
   
     const { id} = useParams();
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate()
+    const dispatch= useDispatch()
+        
+        
+        const addtoCard = (id)=>{
+            dispatch(addCard(id))
+            
+          }
 
     useEffect(() => {
         setTimeout(() => {
@@ -90,7 +99,7 @@ const Order = () => {
                                 </div>
 
                                 <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '50px' }}>
-                                    <button className="btn">
+                                    <button className="btn" onClick={()=>addtoCard(iteam.id)}>
                                         Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} />
                                     </button>
                                     <h1 style={{ color: 'green' }}>Price : {iteam.new_price}</h1>

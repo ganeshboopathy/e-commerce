@@ -4,6 +4,8 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import { data_e_commerce } from '../../data/data';
 import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import { useDispatch } from 'react-redux';
+import { addCard } from '../../store/CardSlice';
 
 const Order_form = () => {
     const [quantity, setQuantity] = useState(1);
@@ -11,11 +13,7 @@ const Order_form = () => {
     const [phone, setPhone] = useState();
     const { id } = useParams();
     const product = data_e_commerce.find((item) => item.id === Number(id));
-
-    const my_alert = () => {
-
-    }
-
+    
     const handleConfirmOrder = () => {
         if (!address || !phone) {
             Swal.fire({

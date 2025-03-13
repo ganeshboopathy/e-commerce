@@ -19,10 +19,18 @@ const CardSLice = createSlice({
                       });
                 }
             }
+            else if( existingProduct){
+                Swal.fire({
+                    title: "add card one time only",
+                    icon: "error",
+                    draggable: true
+                  });
+
+            }
         },
         removeCard(state, action) {
             Swal.fire({
-                title: "add card successfully ",
+                title: " Card removed successfully ",
                 icon: "success",
                 draggable: true
               });            
