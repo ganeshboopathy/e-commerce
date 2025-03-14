@@ -12,3 +12,15 @@
      align-items: center;
      
 }
+@media (max-width:768px) {
+
+
+    .card-popular{
+        display: grid;
+        grid-template-columns:  1fr 1fr ;
+        gap: 40px;
+         justify-content: center;
+         align-items: center;
+    }
+    
+  }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './component/navbar/navbar'
+import Navbar from './component/navbar/Navbar'
 import HeroBannar from './component/hero/HeroBannar'
 import Popular from './component/popular_dress/Popular'
 import Footer from './component/footer/Footer'
@@ -40,6 +40,7 @@ function App() {
 
     return (
       <>
+      <div >
         <BrowserRouter>
           <Navbar setlogin={setlogin} />
           <HeroBannar />
@@ -54,6 +55,8 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
+      </div>
+        
       </>
     )
   }

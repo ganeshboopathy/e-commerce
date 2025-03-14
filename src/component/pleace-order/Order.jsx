@@ -100,13 +100,13 @@ const Order = () => {
 
                                 <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '50px' }}>
                                     <button className="btn" onClick={()=>addtoCard(iteam.id)}>
-                                        Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} />
+                                        Add to Cart <TbShoppingCartPlus className='view-icon'  />
                                     </button>
                                     <h1 style={{ color: 'green' }}>Price : {iteam.new_price}</h1>
                                     <h2 style={{ color: 'gray', textDecoration: "line-through" }}>Old price :{iteam.old_price}</h2>
                                 </div>
 
-                                <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '1rem', justifyContent: 'center' }}>
+                                <div className='Limited-Offer-order' style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '1rem', justifyContent: 'center' }}>
                                     <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
                                     <h2 style={{ color: 'red' }}>Limited Offer</h2>
                                     <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
@@ -122,7 +122,7 @@ const Order = () => {
             
             <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '1rem', justifyContent: 'center', width: '100%' }}>
                 <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
-                <button className='btn' style={{ padding: '20px', fontSize: '1.5rem' }} onClick={()=>navigate('/')}>Back to home</button>
+                <button className='btn' onClick={()=>navigate('/')}>Back to home</button>
                 <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
             </div>          
         </div>

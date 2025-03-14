@@ -8,8 +8,18 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: gray;
 }
 button{
   cursor: pointer;
+}
+
+@media (max-width:768px) {
+
+  .login-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2570px;
+    font-size: 2rem;
+  }
 }

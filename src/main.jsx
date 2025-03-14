@@ -11,7 +11,9 @@ AOS.init();
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={Store}>
-    <App />
+      <div className='total-container'>
+      <App />
+      </div>
     </Provider>
   </StrictMode>,
 )

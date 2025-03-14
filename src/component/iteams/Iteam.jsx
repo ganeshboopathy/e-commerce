@@ -42,7 +42,7 @@ export const Iteam = ({ id, image, description, new_price, old_price, category }
               <p style={{ fontWeight: '800' }}> ${new_price}</p>
               <p style={{ color: 'gray', textDecoration: "line-through" }}> ${old_price}</p>
             </div>
-            <button className='btn' onClick={() => addtoCard(id)}>Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} /> </button>
+            <button className='btn' onClick={() => addtoCard(id)}>Add to Cart <TbShoppingCartPlus className='view-icon' /> </button>
           </div>
         </div>
 

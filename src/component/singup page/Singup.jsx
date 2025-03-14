@@ -34,9 +34,9 @@ function Singup({setlogin}) {
                 <div className='img-content'>
                     <div className='blue-button'><div></div></div>
                     <h1>Let us help you run your <br />freelance business</h1>
-                    <h3>Our registration process is quick and easy, taking <br />no more thsn 10 minutes to complete</h3>
+                    <h3>Our registration process is quick and easy, taking no more thsn 10 minutes to complete</h3>
                     <div className='primary-content'>
-                        <p>I'm impressed with the results l've seen since <br />starting to use this product, I begin receiving<br /> clients and projects in the first week.</p>
+                        <p>I'm impressed with the results l've seen since starting to use this product, I begin receiving clients and projects in the first week.</p>
                         <div className='image-login'>
                             <div className='image-face'></div>
                             <div style={{ marginLeft: '8px' }}>

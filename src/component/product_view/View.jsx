@@ -78,7 +78,7 @@ const View = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+                            <div >
                                 <div style={{ display: 'flex', flexDirection: 'row', marginTop: "10px", gap: '20px', alignItems: 'start' }}>
                                     <h1 style={{ fontWeight: 'bold', width: '300px' }}>Description :</h1>
                                     <h2 style={{ color: 'gray' }}>{iteam.description}</h2>
@@ -92,7 +92,7 @@ const View = () => {
 
                                 <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '50px' }}>
                                     <button className="btn" onClick={()=>addtoCard(iteam.id)}>
-                                        Add to Cart <TbShoppingCartPlus style={{ fontSize: '1.5rem' }} />
+                                        Add to Cart <TbShoppingCartPlus  className='view-icon' />
                                     </button>
                                     <h1 style={{ color: 'green' }}>Price : {iteam.new_price}</h1>
                                     <h2 style={{ color: 'gray', textDecoration: "line-through" }}>Old price :{iteam.old_price}</h2>
@@ -107,10 +107,10 @@ const View = () => {
                                 <h2 style={{ color: 'blue' }}>Specification :</h2>
                                 <ul style={{ margin: "2rem" }}>
                                     {iteam.review.map((rev, index) => (
-                                        <li key={index} style={{ padding: '1rem', fontSize: '1.5rem' }}>{rev}</li>
+                                        <li key={index} style={{ padding: '1rem', fontSize: '2.5rem' }} className='specification-li'>{rev}</li>
                                     ))}
                                 </ul>
-                                <button className='btn' style={{ padding: '20px', fontSize: '1.5rem',margin:'20px' }} onClick={()=>{navigate(`/order/${id}`)}}>Place the Order</button>
+                                <button className='btn PlacetheOrder'  onClick={()=>{navigate(`/order/${id}`)}}>Place the Order</button>
 
                             </div>
                             
@@ -122,7 +122,7 @@ const View = () => {
             
             <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '1rem', justifyContent: 'center', width: '100%' }}>
                 <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
-                <button className='btn' style={{ padding: '20px', fontSize: '1.5rem' }} onClick={()=>{navigate(`/order/${id}`)}}>Place the Order</button>
+                <button className='btn PlacetheOrder'  onClick={()=>{navigate(`/order/${id}`)}}>Place the Order</button>
                 <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
             </div>
 
