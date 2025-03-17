@@ -15,6 +15,9 @@ function Singup({setlogin}) {
                 icon: "error",
                 title: "Oops...",
                 text: "Please fill all fields!",
+                customClass: {
+                    popup: 'swal-custom-popup' 
+                }
               });
             return;
         }else{
@@ -22,7 +25,10 @@ function Singup({setlogin}) {
         Swal.fire({
             title: "Signup successful!",
             icon: "success",
-            draggable: true
+            draggable: true,
+            customClass: {
+                popup: 'swal-custom-popup' 
+            }
           });
           setlogin(true);
         }

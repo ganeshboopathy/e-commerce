@@ -15,7 +15,10 @@ const CardSLice = createSlice({
                     Swal.fire({
                         title: "add card successfully ",
                         icon: "success",
-                        draggable: true
+                        draggable: true,
+                        customClass: {
+                            popup: 'swal-custom-popup' 
+                        }
                       });
                 }
             }
@@ -23,7 +26,10 @@ const CardSLice = createSlice({
                 Swal.fire({
                     title: "add card one time only",
                     icon: "error",
-                    draggable: true
+                    draggable: true,
+                    customClass: {
+                        popup: 'swal-custom-popup' 
+                    }
                   });
 
             }

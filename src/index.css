@@ -1,14 +1,22 @@
-body{
-    width: 99vw;
+body {
+    width: 100%;
     font-size: 1.5rem;
-    height:100vh;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-@media (max-width:768px) {
-.total-container{
-    width: 400vw;
-    
-
+.total-container {
+    width: 100%;
+    min-width: 1550px;/* Set a max width to maintain structure */
+    margin: 0 auto; /* Center the container */
 }
 
+@media (max-width: 768px) {
+    .total-container {
+        width: 100%; /* Keep it responsive */
+        max-width: 1260px;/* Set a max width to maintain structure */
+        min-width: 1200px;
+
+    }
 }

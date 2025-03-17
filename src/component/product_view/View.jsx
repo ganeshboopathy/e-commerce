@@ -79,9 +79,9 @@ const View = () => {
                                 </div>
                             </div>
                             <div >
-                                <div style={{ display: 'flex', flexDirection: 'row', marginTop: "10px", gap: '20px', alignItems: 'start' }}>
-                                    <h1 style={{ fontWeight: 'bold', width: '300px' }}>Description :</h1>
-                                    <h2 style={{ color: 'gray' }}>{iteam.description}</h2>
+                                <div style={{ display: 'flex', flexDirection:'column', marginTop: "10px", gap: '5px', alignItems: 'start' }}>
+                                    <h1 style={{ fontWeight: 'bold', width: '800px' }}>Description :</h1><br/>
+                                    <h2 className='description-view'>{iteam.description}</h2>
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
@@ -107,7 +107,7 @@ const View = () => {
                                 <h2 style={{ color: 'blue' }}>Specification :</h2>
                                 <ul style={{ margin: "2rem" }}>
                                     {iteam.review.map((rev, index) => (
-                                        <li key={index} style={{ padding: '1rem', fontSize: '2.5rem' }} className='specification-li'>{rev}</li>
+                                        <li key={index} style={{ padding: '1rem'}} className='specification-li'>{rev}</li>
                                     ))}
                                 </ul>
                                 <button className='btn PlacetheOrder'  onClick={()=>{navigate(`/order/${id}`)}}>Place the Order</button>

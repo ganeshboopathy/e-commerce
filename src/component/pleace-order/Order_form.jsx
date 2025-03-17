@@ -20,13 +20,19 @@ const Order_form = () => {
                 icon: "error",
                 title: "Oops...",
                 text: "Please fill all fields!",
+                customClass: {
+                    popup: 'swal-custom-popup' 
+                }
             });
             return;
         }
         Swal.fire({
             title: "Thank You! Your Order is Confirmed",
             icon: "success",
-            draggable: true
+            draggable: true,
+            customClass: {
+                popup: 'swal-custom-popup' 
+            }
         });
     };
 
