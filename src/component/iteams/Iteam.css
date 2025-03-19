@@ -62,7 +62,7 @@
     .card-container {
         display: flex;
         flex-direction: column;
-        width: 35rem;
+        width: 32rem;
         padding:1rem;
         border: 2px solid gray;
         border-radius: 20px;
@@ -91,7 +91,7 @@
     }
     
     .card-container:hover {
-        transform: scale(1.1);
+        transform: scale(1);
     }
     .box{
       padding: 10px;

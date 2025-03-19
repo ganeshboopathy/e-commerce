@@ -38,7 +38,10 @@ const CardSLice = createSlice({
             Swal.fire({
                 title: " Card removed successfully ",
                 icon: "success",
-                draggable: true
+                draggable: true,
+                customClass: {
+                    popup: 'swal-custom-popup' 
+                }
               });            
         return state.filter((item) => item.id != action.payload)
 

@@ -94,12 +94,14 @@
     .container h1 {
         margin-top: 50px;
         font-size: 4.5rem;
+        text-align: center;
     }
     
     .container p {
         margin-top: 1.5rem;
         color: gray;
         font-size: 3.5rem;
+        text-align: center;
     }
     
     .logo_footer {
