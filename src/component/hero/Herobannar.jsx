@@ -8,7 +8,7 @@ export const HeroBannar = () => {
         <div className="hero-banner">
             <div className='hero-banner-text'  data-aos="fade-up">
                 <h2 >NEW ARRIVALS ONLY</h2>
-                <h1 style={{fontSize:"50px"}}>new<br/>Collections<br/>For everyone</h1>
+                <h1 >new<br/>Collections<br/>For everyone</h1>
                 <button>Latest Collection <FaArrowRight />
                 </button>
             </div>

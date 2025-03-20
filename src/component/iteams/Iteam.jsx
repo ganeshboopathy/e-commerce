@@ -3,11 +3,12 @@ import './Iteam.css'
 import { TbShoppingCartPlus } from "react-icons/tb";
 import { useState, useEffect } from 'react';
 import { Riple } from 'react-loading-indicators';
-
+import { useNavigate } from 'react-router-dom';
 
 
 export const Iteam = ({ id, image, description, new_price, old_price, category }) => {
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate()
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -28,7 +29,7 @@ export const Iteam = ({ id, image, description, new_price, old_price, category }
       <div  data-aos="fade-up"
         data-aos-anchor-placement="top-center" >
         <div key={id} className='card-container'>
-          <img src={image} alt={description} className='image-container'  />
+          <img src={image} alt={description}  className='image-container'  onClick={() => { navigate(`/view/${id}/${category}`) }} />
           <h4 className='description'>{description}</h4>
           <div className='price-container'>
             <div className='box' >

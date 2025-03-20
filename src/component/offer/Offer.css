@@ -9,7 +9,7 @@
     display: grid;
     margin-top: 3%;
     grid-template-columns: 1fr 1fr;
-    width: 80%;
+    width: 100%;
     height: 470px;
     background: linear-gradient(to bottom right, #ffb6c1 15%, #ffffff);
     border: 1px solid gray;
@@ -34,7 +34,7 @@
     align-items: center;
     gap: 2%;
     border-radius: 20px;
-    margin-top: 2%;
+    margin-top: 8%;
 }
 
 .offer-banner-img {

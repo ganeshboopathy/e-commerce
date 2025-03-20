@@ -1,0 +1,94 @@
+.category{
+    color: gray;
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+    flex-direction: column;
+    text-decoration: underline;
+}
+.view-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Adding box shadow */
+    margin-bottom: 100px;
+}
+.img-container-view{
+    display: grid;
+    grid-template-columns: 100px  100px 100px 100px 100px;
+    grid-template-rows: 100px  100px 100px 100px 100px ;
+    gap: 10px;
+   column-gap: 30px;
+}
+.img-view{
+    width: 100%;
+    height: 100%;
+    border: 10px solid gray;
+    border-radius: 5px;
+}
+.cover-img{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+.category-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+}
+.img-container-view-aling{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+/* .order-page-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color:gray;
+} */
+ .PlacetheOrder{
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+ }
+ .description-view{
+    color: gray;
+    margin: 1rem;
+    width: 90%;
+ }
+ @media (max-width:768px) {
+    
+    .view-container{
+        display: grid;
+        grid-template-columns:  1fr;
+        width: 100%;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Adding box shadow */
+        margin-bottom: 100px;
+        font-size: 2re;
+        padding: 4rem;
+    }
+    .img-container-view{
+        display: grid;
+        grid-template-columns: 150px  150px 150px 150px 150px;
+        grid-template-rows: 150px  150px 150px 150px 150px ;
+        gap: 10px;
+       column-gap: 30px;
+    }
+   .PlacetheOrder{
+    padding: 2rem;
+    font-size: 2.5rem;
+   }
+   .description-view{
+    color: gray;
+    margin: 1rem;
+    width: 70%;
+ }
+ }
