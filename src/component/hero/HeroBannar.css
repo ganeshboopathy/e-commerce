@@ -1,0 +1,83 @@
+.hero-banner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    background: linear-gradient(to bottom right, #ffb6c1 65%, #ffffff 5%);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); /* Adding box shadow */
+    margin-top: 1px;
+}
+.hero-banner-text{
+    margin-top: 5%;
+    padding-left: 20%;
+}
+.hero-banner-text button{
+    font-size: 2rem;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 400px;
+    border-radius: 25px;
+    margin-top: 2rem;
+    margin-bottom: 30px;
+}
+.hero-banner-img{
+    background-image: url(../../assets/hero3.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background: linear-gradient(to bottom right, #ffb6c1 70%, #ffffff 15%);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 1px;
+    padding: 20px 0;
+}
+
+/* TEXT SECTION */
+.hero-banner-text {
+    margin-top: 5%;
+    padding-left: 15%;
+}
+
+.hero-banner-text button {
+    font-size: 1.5rem;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 25px;
+    margin-top: 2rem;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero-banner-text button:hover {
+    background-color: darkred;
+}
+
+/* IMAGE SECTION */
+.hero-banner-img {
+    background-image: url('../../assets/hero3.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* MOBILE RESPONSIVE */
+
