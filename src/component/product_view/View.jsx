@@ -30,11 +30,11 @@ const View = () => {
         return (
             <>
                 {[...Array(fullStars)].map((_, index) => (
-                    <FaStar key={`full-${index}`} style={{ color: 'gold', fontSize: '1.5rem' }} />
+                    <FaStar key={`full-${index}`} className='fullstar' />
                 ))}
-                {halfStar && <FaStarHalfStroke key="half" style={{ color: 'gold', fontSize: '1.5rem' }} />}
+                {halfStar && <FaStarHalfStroke key="half" className='halfstar' />}
                 {[...Array(emptyStars)].map((_, index) => (
-                    <CiStar key={`empty-${index}`} style={{ color: 'gray', fontSize: '1.5rem' }} />
+                    <CiStar key={`empty-${index}`} className='emptystar' />
                 ))}
             </>
         );
@@ -49,7 +49,7 @@ const View = () => {
     }
 
     return (
-        <div style={{ margin: '3rem' }}>
+        <div  className='full-view-container'>
             {data_e_commerce.map((iteam) => {
                 if (Number(id) === iteam.id) {
                     return (
@@ -74,8 +74,8 @@ const View = () => {
                                 </div>
                             </div>
                             <div >
-                                <div style={{ display: 'flex', flexDirection:'column', marginTop: "10px", gap: '5px', alignItems: 'start' }}>
-                                    <h1 style={{ fontWeight: 'bold', width: '800px' }}>Description :</h1><br/>
+                                <div style={{ display: 'flex', flexDirection:'column', marginTop: "10px", gap: '0px', alignItems: 'start' }}>
+                                    <h1 style={{ fontWeight: 'bold' }}>Description :</h1><br/>
                                     <h2 className='description-view'>{iteam.description}</h2>
                                 </div>
 
@@ -85,15 +85,15 @@ const View = () => {
                                     <span style={{ fontSize: '1.2rem', color: 'gray' }}>({iteam.rating})</span>
                                 </div>
 
-                                <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '50px' }}>
-                                    <button className="btn" onClick={()=>addtoCard(iteam.id)}>
+                                <div className='' style={{ display: 'flex', flexDirection: 'row', gap: '15px', alignItems: 'center', marginTop: '50px',justifyItems:'center' }}>
+                                    <button className="btn" >
                                         Add to Cart <TbShoppingCartPlus  className='view-icon' />
                                     </button>
                                     <h1 style={{ color: 'green' }}>Price : {iteam.new_price}</h1>
                                     <h2 style={{ color: 'gray', textDecoration: "line-through" }}>Old price :{iteam.old_price}</h2>
                                 </div>
 
-                                <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '1rem', justifyContent: 'center' }}>
+                                <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center', margin: '2rem', justifyContent: 'center' }}>
                                     <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
                                     <h2 style={{ color: 'red' }}>Limited Offer</h2>
                                     <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
@@ -115,7 +115,7 @@ const View = () => {
                 return null;
             })}
             
-            <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center', marginTop: '1rem', justifyContent: 'center', width: '100%' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: '1rem', justifyContent: 'center', width: '100%' }}>
                 <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
                 <button className='btn PlacetheOrder'  onClick={()=>{navigate(`/order/${id}`)}}>Place the Order</button>
                 <hr style={{ width: '30%', height: '3px', backgroundColor: 'black' }} />
