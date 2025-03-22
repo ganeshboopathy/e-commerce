@@ -82,12 +82,11 @@ const Navbar = ({ setlogin }) => {
                             )
                         }
 
-                    </div>
-                    <button className='bargar-icon'>
+                    </div>               
+                </div>
+                <button className='bargar-icon'>
                         <FaBars onClick={() => setMobileMenuOpen(!mobileMenuOpen)} />
                     </button>
-
-                </div>
             </div>
             {mobileMenuOpen &&
                 <div className='navbar-for-mobile-view'>
