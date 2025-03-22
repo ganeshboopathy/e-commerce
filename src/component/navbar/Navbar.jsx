@@ -2,13 +2,20 @@ import './navbar.css'
 import logo from '../../../src/assets/logo1.jpg'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
-const Navbar = ({setlogin }) => {
+const Navbar = ({ setlogin }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const navigate = useNavigate();
+    const cartItems = useSelector((state) => state.card);
+    const count = cartItems.length;
+
+    useEffect(() => {
+        console.log(cartItems.length);
+    }, [cartItems]);
 
     return (
         <>
@@ -20,7 +27,7 @@ const Navbar = ({setlogin }) => {
                 <ul>
                     {window.location.pathname === '/' ? (
                         <div>
-                            <li onClick={() => navigate('/')}style={{ color: 'red' }}>Shop</li>
+                            <li onClick={() => navigate('/')} style={{ color: 'red' }}>Shop</li>
                             <hr className='nav-hr' />
                         </div>
                     ) : (
@@ -63,14 +70,14 @@ const Navbar = ({setlogin }) => {
                         {
                             window.location.pathname === '/Add-to-card' ? (
                                 <div>
-                                    <MdOutlineShoppingCart className='icon' style={{ color: 'red' }}  />
+                                    <MdOutlineShoppingCart className='icon' style={{ color: 'red' }} />
                                     <div className='card-display'>{count}</div>
                                     <hr className='nav-hr' />
                                 </div>
                             ) : (
                                 <div>
-                                    <MdOutlineShoppingCart className='icon' />
-                                     <div className='card-display' >0</div>
+                                    <MdOutlineShoppingCart className='icon' onClick={() => navigate('/Add-to-card')} />
+                                    {count > 0 && <div className='card-display' >{count}</div>}
                                 </div>
                             )
                         }
@@ -87,40 +94,40 @@ const Navbar = ({setlogin }) => {
                     <ul>
                         {window.location.pathname === '/' ? (
                             <div>
-                                <li onClick={() => {navigate('/'); setMobileMenuOpen(false);}} style={{ color: 'red' }}>Shop</li>
+                                <li onClick={() => { navigate('/'); setMobileMenuOpen(false); }} style={{ color: 'red' }}>Shop</li>
                                 <hr className='nav-hr' />
                             </div>
                         ) : (
-                            <li onClick={() => {navigate('/'); setMobileMenuOpen(false);}}>Shop</li>
+                            <li onClick={() => { navigate('/'); setMobileMenuOpen(false); }}>Shop</li>
                         )}
                         {
                             window.location.pathname === '/mens' ? (
                                 <div>
-                                    <li onClick={() =>{navigate('/mens'); setMobileMenuOpen(false);}} style={{ color: 'red' }}>Mens</li>
+                                    <li onClick={() => { navigate('/mens'); setMobileMenuOpen(false); }} style={{ color: 'red' }}>Mens</li>
                                     <hr className='nav-hr' />
                                 </div>
                             ) : (
-                                <li onClick={() =>{navigate('/mens'); setMobileMenuOpen(false);}}>Mens</li>
+                                <li onClick={() => { navigate('/mens'); setMobileMenuOpen(false); }}>Mens</li>
                             )
                         }
                         {
                             window.location.pathname === '/women' ? (
                                 <div>
-                                    <li onClick={() => {navigate('/women'); setMobileMenuOpen(false);}} style={{ color: 'red' }}>Womens</li>
+                                    <li onClick={() => { navigate('/women'); setMobileMenuOpen(false); }} style={{ color: 'red' }}>Womens</li>
                                     <hr className='nav-hr' />
                                 </div>
                             ) : (
-                                <li onClick={() => {navigate('/women'); setMobileMenuOpen(false);}}>Womens</li>
+                                <li onClick={() => { navigate('/women'); setMobileMenuOpen(false); }}>Womens</li>
                             )
                         }
                         {
                             window.location.pathname === '/kids' ? (
                                 <div>
-                                    <li onClick={() => {navigate('/kids');setMobileMenuOpen(false);}} style={{ color: 'red' }}>Kids</li>
+                                    <li onClick={() => { navigate('/kids'); setMobileMenuOpen(false); }} style={{ color: 'red' }}>Kids</li>
                                     <hr className='nav-hr' />
                                 </div>
                             ) : (
-                                <li onClick={() => { navigate('/kids'); setMobileMenuOpen(false);}}>Kids</li>
+                                <li onClick={() => { navigate('/kids'); setMobileMenuOpen(false); }}>Kids</li>
                             )
                         }
                     </ul>

@@ -60,7 +60,7 @@ function Singup({setlogin}) {
                     <label>Email</label>
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <label>Password</label>
-                    <label className='green-label'>Strong !</label>
+                    <label className='green-label' style={{color:'green'}}>Strong !</label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button className='button-login' onClick={handleSubmit}>Sing Up</button>
                     <center>

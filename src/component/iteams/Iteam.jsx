@@ -4,11 +4,14 @@ import { TbShoppingCartPlus } from "react-icons/tb";
 import { useState, useEffect } from 'react';
 import { Riple } from 'react-loading-indicators';
 import { useNavigate } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
+import { addCard } from '../../store/CardSlice';
 
 export const Iteam = ({ id, image, description, new_price, old_price, category }) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -22,7 +25,10 @@ export const Iteam = ({ id, image, description, new_price, old_price, category }
       </div>
     );
   }
+   const addtoCard = (id) => {
+      dispatch(addCard(id))
   
+    }
 
   return (
     <div>
@@ -36,7 +42,7 @@ export const Iteam = ({ id, image, description, new_price, old_price, category }
               <p style={{ fontWeight: '800' }}> ${new_price}</p>
               <p style={{ color: 'gray', textDecoration: "line-through" }}> ${old_price}</p>
             </div>
-            <button className='btn' >Add to Cart <TbShoppingCartPlus className='view-icon' /> </button>
+            <button className='btn' onClick={() => addtoCard(id)}>Add to Cart <TbShoppingCartPlus className='view-icon' /> </button>
           </div>
         </div>
 

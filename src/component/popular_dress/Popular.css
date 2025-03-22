@@ -25,6 +25,9 @@
 .popular-container h1 {
     margin-top: 3rem;
 }
+.add-2rem{
+    margin-top: 2rem;
+}
 
 @media (max-width:768px) {
 
@@ -52,5 +55,8 @@
         background-color: black;
         margin-bottom: 0rem;
         margin-top: .3rem;
+    }
+    .add-2rem{
+        margin-top: 0rem;
     }
 }

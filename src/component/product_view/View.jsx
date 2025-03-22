@@ -10,16 +10,23 @@ import { BlinkBlur } from 'react-loading-indicators';
 import {data_e_commerce} from '../../data/data'
 import { useNavigate } from 'react-router-dom';
 import {addCard} from "../../store/CardSlice"
+import {useDispatch} from "react-redux"
 const View = () => {
     const { id,category } = useParams();
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate()
+    const dispatch= useDispatch()
 
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
         }, 3000);
     }, []);
+
+    const addtoCard = (id)=>{
+            dispatch(addCard(id))
+            
+          }
    
 
     const renderStars = (rating) => {
@@ -86,7 +93,7 @@ const View = () => {
                                 </div>
 
                                 <div className='' style={{ display: 'flex', flexDirection: 'row', gap: '15px', alignItems: 'center', marginTop: '50px',justifyItems:'center' }}>
-                                    <button className="btn" >
+                                    <button className="btn" onClick={()=>addtoCard(iteam.id)} >
                                         Add to Cart <TbShoppingCartPlus  className='view-icon' />
                                     </button>
                                     <h1 style={{ color: 'green' }}>Price : {iteam.new_price}</h1>

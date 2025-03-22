@@ -81,9 +81,9 @@ textarea,
 
 @media (max-width:768px) {
     .swal-custom-popup {
-        width: 800px !important;
+        width: 200px !important;
         /* Adjust width for mobile */
-        font-size: 2.5rem;
+        font-size: .5rem;
         /* Reduce text size */
     }
 
