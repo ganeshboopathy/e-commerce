@@ -20,10 +20,17 @@ const Order = () => {
     const { id} = useParams();
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate()
+    const dispatch= useDispatch()
+    
+    const addtoCard = (id) => {
+          dispatch(addCard(id))
+      
+        }
     
         
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         setTimeout(() => {
             setLoading(false);
         }, 3000);
@@ -94,7 +101,7 @@ const Order = () => {
                                             </div>
             
                                             <div className='' style={{ display: 'flex', flexDirection: 'row', gap: '15px', alignItems: 'center', marginTop: '50px',justifyItems:'center' }}>
-                                                <button className="btn" >
+                                                <button className="btn" onClick={() => addtoCard(iteam.id)}>
                                                     Add to Cart <TbShoppingCartPlus  className='view-icon' />
                                                 </button>
                                                 <h1 style={{ color: 'green' }}>Price : {iteam.new_price}</h1>

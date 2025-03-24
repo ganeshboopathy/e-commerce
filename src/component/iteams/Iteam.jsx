@@ -13,6 +13,7 @@ export const Iteam = ({ id, image, description, new_price, old_price, category }
   const dispatch = useDispatch()
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTimeout(() => {
       setLoading(false);
     }, 2000);

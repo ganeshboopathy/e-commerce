@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     margin: 3%;
-    
+
 }
 
 .offer-banner {
@@ -14,7 +14,8 @@
     background: linear-gradient(to bottom right, #ffb6c1 15%, #ffffff);
     border: 1px solid gray;
     border-radius: 2%;
-    box-shadow: 0.5% 0.5% 1% rgba(0, 0, 0, 0.8); /* Adjusted box shadow */
+    box-shadow: 0.5% 0.5% 1% rgba(0, 0, 0, 0.8);
+    /* Adjusted box shadow */
     padding: 10px;
 }
 
@@ -24,7 +25,8 @@
 }
 
 .offer-banner-text button {
-    font-size: 20px; /* Converted from 2rem */
+    font-size: 20px;
+    /* Converted from 2rem */
     background-color: red;
     border: none;
     color: white;
@@ -43,29 +45,36 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.offer-banner-text h1{
- font-size: 50px;
+
+.offer-banner-text h1 {
+    font-size: 50px;
 }
-.offer-banner-text h2{
-   color: gray;
-   margin-top: 20px;
-   }
+
+.offer-banner-text h2 {
+    color: gray;
+    margin-top: 20px;
+}
 
 @media (max-width: 768px) {
     .offer-container {
         display: flex;
         justify-content: center;
         margin: 3%;
-        
+
     }
-    .offer-banner-text h1{
+
+    .offer-banner-text h1 {
         font-size: 25px;
-       }
-       .offer-banner-text h2{
+        color: red;
+    }
+
+    .offer-banner-text h2 {
         color: gray;
-        margin-top: 20px;
         font-size: 10px;
-        }
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     .offer-banner {
         display: grid;
         margin-top: 3%;
@@ -75,17 +84,20 @@
         background: linear-gradient(to bottom right, #ffb6c1 15%, #ffffff);
         border: 1px solid gray;
         border-radius: 2%;
-        box-shadow: 0.5% 0.5% 1% rgba(0, 0, 0, 0.8); /* Adjusted box shadow */
+        box-shadow: 0.5% 0.5% 1% rgba(0, 0, 0, 0.8);
+        /* Adjusted box shadow */
         padding: 10px;
     }
-    
+
     .offer-banner-text {
         margin-top: 5%;
         padding-left: 10%;
+        text-align: start;
     }
-    
+
     .offer-banner-text button {
-        font-size: 8px; /* Converted from 2rem */
+        font-size: 8px;
+        /* Converted from 2rem */
         background-color: red;
         border: none;
         color: white;
@@ -97,7 +109,7 @@
         border-radius: 20px;
         margin-top: 2%;
     }
-    
+
     .offer-banner-img {
         background-image: url(../../assets/vecteezy_young-woman-announcing-with-megaphone-red-apron_52854962.png);
         background-position: center;

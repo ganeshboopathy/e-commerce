@@ -18,6 +18,7 @@ const View = () => {
     const dispatch= useDispatch()
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         setTimeout(() => {
             setLoading(false);
         }, 3000);
@@ -131,7 +132,7 @@ const View = () => {
             <div className="popular-container">
                 <Offer />
                 <h1 style={{ textAlign: 'center', marginTop: '30px', marginBottom: '10px' }}>RELATED PRODUCTS</h1>
-                <hr style={{ textAlign: 'center', width: '300px', height: '7px', backgroundColor: 'black', marginBottom: '20px' }} />
+                <hr  />
                 <div className='card-popular'>
                     {data_e_commerce.map((iteam,index) => {
                         if(Number(id)!==iteam.id && category== iteam.category )

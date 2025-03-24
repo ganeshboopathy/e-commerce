@@ -4,7 +4,10 @@ import './index.css'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
 import {Store} from './store/store.js'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
+AOS.init();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
